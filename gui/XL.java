@@ -43,6 +43,7 @@ public class XL extends JFrame implements Printable {
         
         
         
+        
         JPanel statusPanel = new StatusPanel(statusLabel,startSlot,currentCell);
         SheetPanel sheetPanel = new SheetPanel(ROWS, COLUMNS,sheet,currentCell); 
        

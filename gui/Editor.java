@@ -40,13 +40,11 @@ public class Editor extends JTextField implements Observer {
 		currentAdress = currCell.getAdress();
 
 		if(sheet.contains(currentAdress)) {
-			if(!sheet.isExpr(currentAdress)) {
-				setText("#" + sheet.StringRepresentation(currentAdress));
-			} else {
+		
 				setText(sheet.StringRepresentation(currentAdress));
 			}
 			
-		} else {
+		 else {
 			setText("");
 		}
 	}

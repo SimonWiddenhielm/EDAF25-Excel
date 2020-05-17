@@ -70,7 +70,7 @@ public class SlotLabels extends GridPanel {
         	        public void mouseClicked(MouseEvent e) {
         	        	label.setBackground(Color.YELLOW); 
         	    		
-        	    		currentCell.updateAdress(label.getAddress()); 
+        	    		currentCell.updateAddress(label.getAddress()); 
 	
         	         }
         	     });
@@ -79,6 +79,7 @@ public class SlotLabels extends GridPanel {
 
         	}
         }
+        labelList.get(0).setBackground(Color.YELLOW);
         
     	}
 

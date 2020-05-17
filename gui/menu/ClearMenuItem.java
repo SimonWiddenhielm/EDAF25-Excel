@@ -24,6 +24,6 @@ class ClearMenuItem extends JMenuItem implements ActionListener {
     public void actionPerformed(ActionEvent e) {
     	System.out.println("asd");
         sheet.remove(currCell.getAdress());
-        currCell.updateAdress("");
+        currCell.updateAddress("");
     }
 }
