@@ -1,10 +1,13 @@
 package kalkyl;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.Set;
 
 import expr.Environment;
 import expr.Expr;
@@ -25,9 +28,9 @@ public class SheetOfCells extends Observable implements Environment{
 		Cell cell;
 
 		if (expr.charAt(0) == '#') {
-			cell = new StringCell(expr.substring(1));
+			cell = new StringCell(expr);
 			sheet.put(adress, cell);
-			System.out.println(sheet.get(adress).toString(this));
+			
 			setChanged();
 			notifyObservers();
 			return true;
@@ -125,10 +128,17 @@ public class SheetOfCells extends Observable implements Environment{
 		
 		StringBuilder sb = new StringBuilder();
 		
-		for (String adr : sheet.keySet()) {
+		
+		
+		Set<Map.Entry<String, Cell>>sortSet = sheet.entrySet();
+		ArrayList<Map.Entry<String,Cell>>arrList = new ArrayList(sortSet);
+		arrList.sort((adr1,adr2)->  adr1.getKey().compareTo(adr2.getKey()));
+		
+		
+		for (Map.Entry<String, Cell> e : arrList) {
 			
 			
-			sb.append(adr + "=" + sheet.get(adr).toString(this) + "\n");
+			sb.append(e.getKey() + "=" + e.getValue().toString(this) + "\n");
 			
 			
 		}

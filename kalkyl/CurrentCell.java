@@ -13,23 +13,16 @@ public class CurrentCell extends Observable {
 	public CurrentCell(String address) {
 		
 		this.address = address;
+		updateAddress(address);
 		
 	}     
-	
 
-	
-	
-	
-	
-
-	public void updateAdress(String newAddress) { 
+	public void updateAddress(String newAddress) { 
 		
 		address = newAddress;
 		setChanged(); 
         notifyObservers(); 
-		
-		
-		
+
 	}
 
 	public String getAdress() {
